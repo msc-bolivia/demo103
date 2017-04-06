@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>userDetail</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <img [src]="user.picture.large" alt="avatar">
+    <ion-card-header>
+     {{ user.name.first }} {{ user.name.last }}
+    </ion-card-header>
+    <ion-list>
+      <ion-item>
+        {{ user.email }}
+      </ion-item>
+      <ion-item>
+        {{ user.phone }}
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <button ion-button (click)="goBack()" color="danger">Volver</button>
+</ion-content>

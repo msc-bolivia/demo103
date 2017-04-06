@@ -1,0 +1,12 @@
+page-modal {
+  ion-content{
+    ion-list{
+      ion-item.item{
+        background-color: $background-country;
+      }
+    }
+  }
+  h1{
+    color: $background-country;
+  }
+}

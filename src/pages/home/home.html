@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+    <button ion-button menuToggle icon-only>
+      <ion-icon name='menu'></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list no-lines>
+    <ion-list-header>
+      Peliculas
+    </ion-list-header>
+    <ion-item>
+      <ion-icon name="rose" item-left></ion-icon>
+      Terminator
+    </ion-item>
+    <ion-item>
+      <ion-icon name="logo-playstation" item-left></ion-icon>
+      volver al futuro
+    </ion-item>
+    <ion-item>
+      bella y la bestia
+      <ion-icon name="logo-playstation" item-right></ion-icon>
+    </ion-item>
+     <ion-list-header>
+      Paises
+    </ion-list-header>
+    <ion-item-sliding>
+      <ion-item>
+        bolivia
+      </ion-item>
+      <ion-item-options side="left">
+        <button ion-button color="danger">delete</button>
+        <button ion-button color="secondary">edit</button>
+      </ion-item-options>
+      <ion-item-options side="right">
+        <button ion-button color="light">open</button>
+        <button ion-button color="dark">reopen</button>
+      </ion-item-options>
+    </ion-item-sliding>
+    
+    <ion-item>
+      colombia
+    </ion-item>
+    <ion-item>
+      peru
+    </ion-item>
+  </ion-list>
+  <button ion-button (click)="goToUsersPage()">Users Page</button>
+</ion-content>

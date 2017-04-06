@@ -1,0 +1,24 @@
+<ion-menu id="menuPublic" [content]="content">
+  <ion-content>
+    <ion-list>
+      <button ion-item menuClose (click)="openPage( item )" *ngFor="let item of pagesPublic">
+        {{  item.title }}
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-menu id="menuPrivate" [content]="content">
+  <ion-content>
+    <ion-list>
+      <button ion-item>Opcion 4</button>
+      <button ion-item>Opcion 5</button>
+      <button ion-item>Opcion 6</button>
+      <button ion-item>Opcion 7</button>
+      <button ion-item>Opcion 8</button>
+      <button ion-item>Opcion 9</button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav #content [root]="rootPage"></ion-nav>

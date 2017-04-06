@@ -1,0 +1,118 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>login</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <form novalidate [formGroup]="loginForm" (ngSubmit)="saveData( $event )">
+    <ion-list>
+      <ion-item>
+        <ion-label stacked>Nombre:</ion-label>
+        <ion-input formControlName="name" type="text" > </ion-input>
+      </ion-item>
+      <ion-item *ngIf="loginForm.get('name').errors && loginForm.get('name').dirty">
+        <p color="danger" *ngIf="loginForm.get('name').hasError('required')">El campo es requerido</p>
+        <p color="danger" *ngIf="loginForm.get('name').hasError('minlength')">El campo debe tener minimo 10</p>
+        <p color="danger" *ngIf="loginForm.get('name').hasError('maxlength')">El campo debe tener maximo 20</p>
+        <p color="danger" *ngIf="loginForm.get('name').hasError('pattern')">es invalido</p>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Email:</ion-label>
+        <ion-input formControlName="email" type="email" > </ion-input>
+      </ion-item>
+      <ion-item *ngIf="loginForm.get('email').errors && loginForm.get('email').dirty">
+        <p color="danger" *ngIf="loginForm.get('email').hasError('required')">El campo es requerido</p>
+        <p color="danger" *ngIf="loginForm.get('email').hasError('pattern')">es invalido</p>
+      </ion-item>
+      <div formGroupName="passwordGroup">
+        <ion-item>
+          <ion-label stacked>Password:</ion-label>
+          <ion-input formControlName="password" type="password" > </ion-input>
+        </ion-item>
+        <ion-item *ngIf="loginForm.get('passwordGroup').get('password').errors && loginForm.get('passwordGroup').get('password').dirty">
+          <p color="danger" *ngIf="loginForm.get('passwordGroup').get('password').hasError('required')">El campo es requerido</p>
+          <p color="danger" *ngIf="loginForm.get('passwordGroup').get('password').hasError('minlength')">minimo 6</p>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Confirmar Password:</ion-label>
+          <ion-input formControlName="confirmPassword" type="password" > </ion-input>
+        </ion-item>
+        <ion-item *ngIf="loginForm.get('passwordGroup').errors && loginForm.get('passwordGroup').get('confirmPassword').dirty">
+          <p color="danger">No coinceden las variables</p>
+        </ion-item>
+      </div>
+      <ion-item>
+        <ion-label stacked>Age:</ion-label>
+        <ion-input formControlName="age" type="number" > </ion-input>
+      </ion-item>
+      <ion-item *ngIf="loginForm.get('age').errors && loginForm.get('age').dirty">
+        <p color="danger" *ngIf="loginForm.get('age').hasError('required')">El campo es requerido</p>
+        <p color="danger" *ngIf="loginForm.get('age').hasError('isold')">eres un pequeño</p>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>phone:</ion-label>
+        <ion-input formControlName="phone" type="tel" > </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>compo largo:</ion-label>
+        <ion-textarea formControlName="text"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>fechas:</ion-label>
+        <ion-datetime formControlName="date" displayFormat="DD/MMM/YYYY"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>time:</ion-label>
+        <ion-datetime displayFormat="hh:mm a"></ion-datetime>
+      </ion-item>
+      <ion-list-header>
+        ¿Cual es tu sabor?
+      </ion-list-header>
+      <ion-item>
+        <ion-label>Chocolate</ion-label>
+        <ion-checkbox formControlName="chocolate"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Fresa</ion-label>
+        <ion-checkbox formControlName="fresa"></ion-checkbox>
+      </ion-item>
+      <div radio-group formControlName="gender">
+        <ion-list-header>
+          ¿cual es tu genero?
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Masculino</ion-label>
+          <ion-radio value="M"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Femenino</ion-label>
+          <ion-radio value="F"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Otro</ion-label>
+          <ion-radio value="O"></ion-radio>
+        </ion-item>
+      </div>
+      <ion-item>
+        <ion-range formControlName="days" min="1" max="10" pin="true">
+          <ion-label range-left>1</ion-label>
+          <ion-label range-right>10</ion-label>
+        </ion-range>
+      </ion-item>
+      <ion-item>
+        <ion-label>Gaming</ion-label>
+        <ion-select formControlName="console" multiple="true">
+          <ion-option value="nes">NES</ion-option>
+          <ion-option value="n64">Nintendo64</ion-option>
+          <ion-option value="ps">PlayStation</ion-option>
+          <ion-option value="genesis">Sega Genesis</ion-option>
+          <ion-option value="saturn">Sega Saturn</ion-option>
+          <ion-option value="snes">SNES</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <button ion-button type="submit" [disabled]="loginForm.invalid">Guardar</button>
+  </form>
+ <button ion-button (click)="goToHomePage()">Ir al home</button>
+</ion-content>

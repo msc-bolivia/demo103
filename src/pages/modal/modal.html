@@ -1,0 +1,28 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-searchbar #searchbar (ionInput)="onInput( $event )" showCancelButton="true" type="text"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="message">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla aspernatur pariatur minus repudiandae odit magnam adipisci quis non aut debitis quia id est unde natus harum quasi, saepe alias fugiat!</p>
+  </div>
+  <div class="success">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla aspernatur pariatur minus repudiandae odit magnam adipisci quis non aut debitis quia id est unde natus harum quasi, saepe alias fugiat!</p>
+  </div>
+  <div class="info">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla aspernatur pariatur minus repudiandae odit magnam adipisci quis non aut debitis quia id est unde natus harum quasi, saepe alias fugiat!</p>
+  </div>
+  <div class="waring">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla aspernatur pariatur minus repudiandae odit magnam adipisci quis non aut debitis quia id est unde natus harum quasi, saepe alias fugiat!</p>
+  </div>
+  <h1>Paises</h1>
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      {{ item.title }}
+    </ion-item>
+  </ion-list>
+  <button ion-button (click)="close()">close</button>
+</ion-content>
